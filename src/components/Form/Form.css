@@ -1,0 +1,24 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-grow: 1;
+}
+
+.input{
+    margin: 5% auto;
+    width: 75%;
+    height: 10%;
+    border: none;
+    text-align: center;
+    border-bottom: 1px solid royalblue;
+}
+.input:active{
+    outline: none;
+}
+
+.formBtn{
+    
+    margin: 0 auto;
+}

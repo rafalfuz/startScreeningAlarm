@@ -1,0 +1,7 @@
+.btnIcon{
+    color: #5171d1;
+}
+.btnIcon:hover{
+    color: #2d5ff5;
+    cursor: pointer;
+}
