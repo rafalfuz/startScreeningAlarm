@@ -1,19 +1,42 @@
 .filmList{
     list-style-type: none;
     margin-top: 10vh;
+    margin-right: 50px;
 }
 .itemOfFilmList{
-    margin: 10px auto;
-    text-align: left;
+    margin: 15px auto;
+    padding : 5px;
+    text-align: center;
     font-size: 24px;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+
 }
+.itemOfFilmListAlarm{
+    margin: 15px auto;
+    padding : 5px;
+    text-align: center;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: red;
+}
+
 .filmTitle{
     font-weight: bold;
+    flex-basis: 50%;
+    text-align: left;
 }
 .filmTime{
     margin: 0 40px;
+    flex-basis: 20%;
 }
 .filmArea{
     margin-right: 10px;
+    flex-basis: 20%;
+}
+.btnIcons{
+    flex-basis: 10%;
 }

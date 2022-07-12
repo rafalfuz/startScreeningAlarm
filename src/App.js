@@ -3,10 +3,11 @@ import './App.css';
 import { CurrenTime } from './components/CurrentTime/CurrentTime';
 import { PanelList } from './components/PanelList/PanelList';
 import {Form} from './components/Form/Form';
+import { EditModal } from './EditModal/EditModal';
 
 export const App = () => {
   const [listOfSeans, setListOfSeans] = useState([])
-  
+
   const addToList = (props) => {
     setListOfSeans((prev)=>[...prev, props])
   }
@@ -14,21 +15,22 @@ export const App = () => {
   const removeFromList = (id) => {
     setListOfSeans((prev)=>[...prev.filter((item)=>item.id !== id)])
   }
-  const showList = () => {
-    console.log(listOfSeans)
-  }
-  
+
   return(
+    <>
   <div className='App'>
-      <CurrenTime list={listOfSeans}/>
+  <EditModal/>
+      <CurrenTime list={listOfSeans} setListOfSeans={setListOfSeans}/>
     <div className='panel'>
       <div className='panel-list'>
-      <PanelList list={listOfSeans} removeFromList={removeFromList}/>
+      <PanelList list={listOfSeans} removeFromList={removeFromList} />
       </div>
     <Form addToList={addToList} className='panel-form'/>
     </div>
-    <button onClick={()=>showList()}></button>
   </div>
+
+  </>
+
   )
 }
 

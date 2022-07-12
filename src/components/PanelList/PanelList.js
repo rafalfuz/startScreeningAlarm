@@ -7,12 +7,12 @@ export const PanelList = ({list, removeFromList}) => {
     return(
       <ul className='filmList'>
         {list.map(seans => 
-        <li className='itemOfFilmList' 
-        key={seans.title}>
+        <li className={seans.alarm ? 'itemOfFilmListAlarm' :'itemOfFilmList'} 
+        key={seans.id}>
             <div className='filmTitle'>{seans.title}</div> 
             <div className='filmTime'>{seans.time}</div>
             <div className='filmArea'>sala: {seans.area}</div> 
-            <ButtonIcon removeFromList={removeFromList} id={seans.id}/>
+            <div className='btnIcons'><ButtonIcon removeFromList={removeFromList} id={seans.id}/></div>
             </li>)}
       </ul>
     )

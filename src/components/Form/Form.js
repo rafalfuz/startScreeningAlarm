@@ -9,7 +9,8 @@ export const Form = ({addToList}) => {
         id: generateId,
         title: '',
         time: '',
-        area: 0
+        area: 0,
+        alarm: false,
     })
 
     const updateForm = (name, value) => {
@@ -26,7 +27,8 @@ export const Form = ({addToList}) => {
             id: generateId,
             title: '',
             time: '',
-            area: 0
+            area: 0,
+            alarm: false
         })
     }
     return ( 
