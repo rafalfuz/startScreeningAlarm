@@ -7,6 +7,7 @@ import { EditModal } from './EditModal/EditModal';
 
 export const App = () => {
   const [listOfSeans, setListOfSeans] = useState([])
+  const [openModal, setOpenModal] = useState(false)
 
   const addToList = (props) => {
     setListOfSeans((prev)=>[...prev, props])
@@ -16,16 +17,20 @@ export const App = () => {
     setListOfSeans((prev)=>[...prev.filter((item)=>item.id !== id)])
   }
 
+  const selectedId = (id) => {
+    listOfSeans.find((item)=>item.id === id)    
+  }
+  
   return(
     <>
   <div className='App'>
-  <EditModal/>
+    <EditModal openModal={openModal} setOpenModal={setOpenModal} selectedId={selectedId}/>
       <CurrenTime list={listOfSeans} setListOfSeans={setListOfSeans}/>
     <div className='panel'>
       <div className='panel-list'>
-      <PanelList list={listOfSeans} removeFromList={removeFromList} />
+      <PanelList list={listOfSeans} removeFromList={removeFromList} setOpenModal={setOpenModal} selectedId={selectedId}/>
       </div>
-    <Form addToList={addToList} className='panel-form'/>
+    <Form addToList={addToList}  className='panel-form'/>
     </div>
   </div>
 

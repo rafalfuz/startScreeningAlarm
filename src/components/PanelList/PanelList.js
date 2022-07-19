@@ -3,7 +3,10 @@ import { ButtonIcon } from '../ButtonIcon/ButtonIcon'
 
 import './PanelList.css'
 
-export const PanelList = ({list, removeFromList}) => {
+export const PanelList = ({list, removeFromList, setOpenModal, selectedId}) => {
+
+
+
     return(
       <ul className='filmList'>
         {list.map(seans => 
@@ -12,8 +15,9 @@ export const PanelList = ({list, removeFromList}) => {
             <div className='filmTitle'>{seans.title}</div> 
             <div className='filmTime'>{seans.time}</div>
             <div className='filmArea'>sala: {seans.area}</div> 
-            <div className='btnIcons'><ButtonIcon removeFromList={removeFromList} id={seans.id}/></div>
+            <div className='btnIcons'><ButtonIcon removeFromList={removeFromList} id={seans.id} setOpenModal={setOpenModal} selectedId={selectedId}/></div>
             </li>)}
+            
       </ul>
     )
 }
