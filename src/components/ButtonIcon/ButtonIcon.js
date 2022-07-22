@@ -1,15 +1,23 @@
-import React from 'react'
-import { FaEdit, FaTrash } from 'react-icons/fa'
+import React from "react";
+import { FaEdit, FaTrash } from "react-icons/fa";
 
-import './ButtonIcon.css'
+import "./ButtonIcon.css";
 
-export const ButtonIcon = ({removeFromList, id, setOpenModal, selectedId}) => {
+export const ButtonIcon = ({
+  removeFromList,
+  id,
+  setOpenModal,
+  selectedIdObj,
+}) => {
+  const handleEditModal = (id) => {
+    setOpenModal(true);
+    selectedIdObj(id);
+  };
 
-    return (
-        <>
-        <FaEdit className='btnIcon' onClick={()=>setOpenModal(true)}/>
-        <FaTrash className='btnIcon' onClick={()=>removeFromList(id)}/>
-        </>
-
-    )
-}
+  return (
+    <>
+      <FaEdit className="btnIcon" onClick={() => handleEditModal(id)} />
+      <FaTrash className="btnIcon" onClick={() => removeFromList(id)} />
+    </>
+  );
+};
