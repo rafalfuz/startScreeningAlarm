@@ -1,7 +1,8 @@
-import React from 'react'
-import { ButtonIcon } from '../ButtonIcon/ButtonIcon'
+import React from "react";
+import { ButtonIcon } from "../ButtonIcon/ButtonIcon";
+import { EditModal } from "../../EditModal/EditModal";
 
-import './PanelList.css'
+import "./PanelList.css";
 
 export const PanelList = ({list, removeFromList, setOpenModal, selectId}) => {
 
@@ -17,7 +18,7 @@ export const PanelList = ({list, removeFromList, setOpenModal, selectId}) => {
             <div className='filmArea'>sala: {seans.area}</div> 
             <div className='btnIcons'><ButtonIcon removeFromList={removeFromList} id={seans.id} setOpenModal={setOpenModal} selectId={selectId}/></div>
             </li>)}
-            
       </ul>
-    )
-}
+    </>
+  );
+};

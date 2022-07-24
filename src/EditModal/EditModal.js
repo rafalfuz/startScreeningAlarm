@@ -1,9 +1,11 @@
+
 /* eslint-disable array-callback-return */
 import React,{ useState} from 'react'
 import {AiOutlineCloseCircle} from 'react-icons/ai'
 import {Button} from '../components/Button/Button'
 
-import './EditModal.css'
+
+import "./EditModal.css";
 
 export const EditModal = ({openModal, setOpenModal, idSelectedSeans, editTitle, listOfSeans, editTime, editArea}) => {
 
@@ -64,6 +66,9 @@ export const EditModal = ({openModal, setOpenModal, idSelectedSeans, editTitle, 
                     <Button text="Change"/>
                     </form>
                 </div>
+
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};

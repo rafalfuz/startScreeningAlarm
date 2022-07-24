@@ -1,22 +1,24 @@
-import React, {useState} from 'react'
-import './App.css';
-import { CurrenTime } from './components/CurrentTime/CurrentTime';
-import { PanelList } from './components/PanelList/PanelList';
-import {Form} from './components/Form/Form';
-import { EditModal } from './EditModal/EditModal';
+import React, { useState } from "react";
+import "./App.css";
+import { CurrenTime } from "./components/CurrentTime/CurrentTime";
+import { PanelList } from "./components/PanelList/PanelList";
+import { Form } from "./components/Form/Form";
 
 export const App = () => {
+
   const [listOfSeans, setListOfSeans] = useState([])
   const [openModal, setOpenModal] = useState(false)
   const [idSelectedSeans, setIdSelectedSeans] = useState(0)
 
+
   const addToList = (props) => {
-    setListOfSeans((prev)=>[...prev, props])
-  }
+    setListOfSeans((prev) => [...prev, props]);
+  };
 
   const removeFromList = (id) => {
-    setListOfSeans((prev)=>[...prev.filter((item)=>item.id !== id)])
-  }
+    setListOfSeans((prev) => [...prev.filter((item) => item.id !== id)]);
+  };
+
 
   const selectId = (id) => {
     setIdSelectedSeans(id)
@@ -60,13 +62,8 @@ const editArea = (newArea) => {
     <div className='panel'>
       <div className='panel-list'>
       <PanelList list={listOfSeans} removeFromList={removeFromList} setOpenModal={setOpenModal} selectId={selectId}/>
+
       </div>
-    <Form addToList={addToList}  className='panel-form'/>
     </div>
-  </div>
-
-  </>
-
-  )
-}
-
+  );
+};
