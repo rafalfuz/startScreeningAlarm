@@ -6,15 +6,21 @@
     width: 50vw;
     height: 50vh;
     border: '2px solid #000';
-    box-shadow: 24;
-    background-color: bisque;
-    resize: both;
-    overflow: auto;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 .editModalWrapper.closedModal{
     display: none;
 }
+.editModalContainer{
+    height: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+}
+
 .editModalHeader{
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,4 +37,37 @@
     transform: scale(1.1);
     cursor: pointer;
     font-weight: bold
+}
+.editModalOldDatas{
+    flex-basis: 20%;    
+    width: 30%;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    
+}
+.editModalOldTitle{
+    font-weight: bold;
+    margin: auto 15px;
+    letter-spacing: 1px;
+}
+.editModalOldTime{
+    letter-spacing: 1px;
+    text-decoration: underline;
+    margin: auto
+}
+.editModalOldArea{
+    margin: auto 10px;
+}
+.formEditModal{
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inputEditModal {
+    width: 400px;
+    margin: 10px auto;
+    text-align: center;
+    height: 50px;
 }
