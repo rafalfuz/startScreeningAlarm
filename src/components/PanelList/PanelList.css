@@ -40,3 +40,41 @@
 .btnIcons{
     flex-basis: 10%;
 }
+@media screen and (max-width: 900px){
+    .filmList{
+        margin-top: 5vh;
+        margin-right: 20px;
+    }
+    .itemOfFilmList{
+        margin: 5px auto;
+        padding : 5px;
+        text-align: center;
+        font-size: 16px;
+    }
+    .itemOfFilmListAlarm{
+        margin: 5px auto;
+        padding : 5px;
+        text-align: center;
+        font-size: 14px;
+        background-color: red;
+    }
+    .filmTitle{
+        flex-basis: 40%;
+    }
+    .filmTime{
+        margin: 0 15px;
+        flex-basis: 10%;
+    }
+    .filmArea{
+        margin-right: 5px;
+        flex-basis: 20%;
+    }
+    .btnIcons{
+        flex-basis: 30%;
+        display: flex;
+        font-size: 20px;
+        justify-content: space-around;
+        
+    }
+
+}

@@ -76,8 +76,12 @@ export const EditModal = ({
       <div className="editModalContainer">
         <div className="editModalOldDatas">
           <p className="editModalOldTitle">{oldTitle}</p>
-          <p className="editModalOldTime">godz.{oldTime}</p>
-          <p className="editModalOldArea">s.{oldArea}</p>
+          <p className="editModalOldTime">
+            godz.<b>{oldTime}</b>
+          </p>
+          <p className="editModalOldArea">
+            s.<b>{oldArea}</b>
+          </p>
         </div>
         <form className="formEditModal" onSubmit={changeDatas}>
           <input
@@ -104,7 +108,7 @@ export const EditModal = ({
             value={input.area}
             onChange={(e) => updateForm("area", e.target.value)}
           />
-          <Button text="Change" />
+          <Button text="Change" className="editModalAcceptBtn" />
         </form>
       </div>
     </div>

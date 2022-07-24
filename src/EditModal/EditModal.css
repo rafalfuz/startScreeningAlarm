@@ -43,8 +43,7 @@
     width: 30%;
     display: flex;
     text-align: center;
-    margin: 0 auto;
-    
+    margin: 0 auto; 
 }
 .editModalOldTitle{
     font-weight: bold;
@@ -70,4 +69,40 @@
     margin: 10px auto;
     text-align: center;
     height: 50px;
+}
+
+@media screen and (max-width: 900px){
+    .editModalWrapper{
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        height: 70vh;
+    }
+    .editModalContainer{
+        height: calc(100% - 40px);
+    }   
+    .editModalHeader{
+        height: 40px;
+    }
+    .editModalHeader--title{
+        flex-basis: 80%;
+    }
+    .editModalHeader--btn{
+        flex-basis: 20%;
+        font-size: 22px;
+    }
+    .editModalOldDatas{
+        flex-basis: 20%;    
+        width: 100%;
+    }
+    .inputEditModal {
+        width: 80%;
+        margin: 5px auto;
+        height: 30px;
+    }
+    .inputEditModalArea{
+        margin-bottom: 50px;
+    }
+    
 }

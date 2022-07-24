@@ -21,3 +21,14 @@
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 900px){
+  .panel{
+    width: 95vw;
+    height: auto;
+    flex-direction: column-reverse;
+  }
+  .panel-list{
+    flex-basis: auto;
+  }
+
+}
