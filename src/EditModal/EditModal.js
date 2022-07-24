@@ -7,26 +7,9 @@ import './EditModal.css'
 
 export const EditModal = ({openModal, setOpenModal, idSelectedSeans, editTitle, listOfSeans, editTime, editArea}) => {
 
-
-        const oldTitle = listOfSeans.map((item)=>{
-            if(item.id === idSelectedSeans){
-                return item.title
-            }
-        })
-    
-        const oldTime = listOfSeans.map((item)=>{
-            if(item.id === idSelectedSeans){
-                return item.time
-            }
-        })
-    
-        const oldArea = listOfSeans.map((item)=>{
-            if(item.id === idSelectedSeans){
-                return item.area
-            }
-        })
-
-
+    const oldTitle = listOfSeans.filter((item)=>item.id === idSelectedSeans).map((item)=>item.title).toString()
+    const oldTime = listOfSeans.filter((item)=>item.id === idSelectedSeans).map((item)=>item.time).toString()
+    const oldArea = listOfSeans.filter((item)=>item.id === idSelectedSeans).map((item)=>item.area).toString()
 
     const [input, setInput] = useState({
         title: oldTitle,
@@ -40,7 +23,7 @@ export const EditModal = ({openModal, setOpenModal, idSelectedSeans, editTitle, 
             [name]: value
         }))
     }
-
+    console.log(oldTime.toString())
     const changeDatas = e => {
         e.preventDefault()
         editTitle(input.title)
@@ -54,22 +37,33 @@ export const EditModal = ({openModal, setOpenModal, idSelectedSeans, editTitle, 
         })
     }
 
-    const handleClose = () => setOpenModal(false)
+    const handleClose = () => {
+        setOpenModal(false)
+        setInput({
+            title: '',
+            time: '',
+            area: ''
+        })
+    }
     return(
         <div className={openModal ? ("editModalWrapper") : ("editModalWrapper closedModal")}>
-                <header className='editModalHeader'>
+            <header className='editModalHeader'>
                 <h2 className='editModalHeader--title'>Edit</h2>
                 <div className='editModalHeader--btn' onClick={handleClose}><AiOutlineCloseCircle/></div>
-                </header>
+            </header>
                 <div className='editModalContainer'>
-                <form className='formEditModal' onSubmit={changeDatas}>
-                    <p>{idSelectedSeans}</p>
-                    <input required type='text' placeholder={oldTitle} value={input.title} onChange={e=>updateForm('title', e.target.value)}/>
-                    <input required type='time' placeholder={oldTime} value={input.time} onChange={e=>updateForm('time', e.target.value)}/>
-                    <input type='number' min='1' max='3' placeholder={oldArea} value={input.area} onChange={e=>updateForm('area', e.target.value)}/>
+                    <div className='editModalOldDatas'>
+                        <p className='editModalOldTitle'>{oldTitle}</p>
+                        <p className='editModalOldTime'>godz.{oldTime}</p>
+                        <p className='editModalOldArea'>s.{oldArea}</p>
+                    </div>
+                    <form className='formEditModal' onSubmit={changeDatas}>
+                    <input className='inputEditModal inputEditModalTitle' required type='text' placeholder={oldTitle} value={input.title} onChange={e=>updateForm('title', e.target.value)}/>
+                    <input className='inputEditModal inputEditModalTime' required type='time' value={input.time} onChange={e=>updateForm('time', e.target.value)}/>
+                    <input className='inputEditModal inputEditModalArea' type='number' min='1' max='3' placeholder={oldArea} value={input.area} onChange={e=>updateForm('area', e.target.value)}/>
                     <Button text="Change"/>
-                </form>
-            </div>
+                    </form>
+                </div>
         </div>
     )
 }
