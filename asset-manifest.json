@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/startScreeningAlarm/static/css/main.fcd69a31.css",
+    "main.js": "/startScreeningAlarm/static/js/main.e0dd5e0c.js",
+    "static/js/845.b4b37309.chunk.js": "/startScreeningAlarm/static/js/845.b4b37309.chunk.js",
+    "static/media/freeSound.mp3": "/startScreeningAlarm/static/media/freeSound.1e7715e69cdd5ed7a152.mp3",
+    "index.html": "/startScreeningAlarm/index.html",
+    "main.fcd69a31.css.map": "/startScreeningAlarm/static/css/main.fcd69a31.css.map",
+    "main.e0dd5e0c.js.map": "/startScreeningAlarm/static/js/main.e0dd5e0c.js.map",
+    "845.b4b37309.chunk.js.map": "/startScreeningAlarm/static/js/845.b4b37309.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fcd69a31.css",
+    "static/js/main.e0dd5e0c.js"
+  ]
+}
